@@ -1,9 +1,9 @@
 node {
    stage('Preparation') { 
-      git 'https://github.com/jglick/simple-maven-project-with-tests.git'
+      git 'https://github.com/richersoon/fleetman-position-tracker'
    }
    stage('Build') {
-      sh "mvn -Dmaven.test.failure.ignore clean package"
+      sh "mvn clean package"
    }
    stage('Results') {
       junit '**/target/surefire-reports/TEST-*.xml'
